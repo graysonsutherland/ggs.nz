@@ -1,3 +1,5 @@
+//Fade in effect
+
 function fadeInPage() {if (!window.AnimationEvent) { return; } var fader = document.getElementById('fader');
 fader.classList.add('fade-out');
 }
@@ -32,4 +34,15 @@ window.addEventListener('pageshow', function (event) {
     fader.classList.remove('fade-in');
   });
 
-  
+
+  //Force page reload when using the back button
+
+  window.addEventListener( "pageshow", function ( event ) {
+    var historyTraversal = event.persisted || 
+                           ( typeof window.performance != "undefined" && 
+                                window.performance.navigation.type === 2 );
+    if ( historyTraversal ) {
+      // Handle page restore.
+      window.location.reload();
+    }
+  });
