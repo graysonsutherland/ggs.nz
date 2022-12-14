@@ -1,40 +1,20 @@
+:root {
+  --main-bg-color: rgb(255, 255, 255);
+  --main-text-color: #121212;
+}
+
+
+
 body {
     font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    background: var(--main-bg-color);
 }
 
-#fader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999999;
-    pointer-events: none;
-    background: white;
-    animation-duration: 300ms;
-    animation-timing-function: ease-in-out;
-    
+
+.main-header {
+  color: var(--main-text-color);
 }
 
-@keyframes fade-out {
-    from { opacity: 1 }
-      to { opacity: 0 }
-}
-
-@keyframes fade-in {
-    from { opacity: 0 }
-      to { opacity: 1 }
-}
-
-#fader.fade-out {
-    opacity: 0;
-    animation-name: fade-out;
-}
-
-#fader.fade-in {
-    opacity: 1;
-    animation-name: fade-in;  
-}
 
 .paragraph {
   margin-left:auto;
@@ -44,24 +24,25 @@ body {
   max-width: 500px;
   padding-left: 30px;
   padding-right: 30px;
+  color: var(--main-text-color);
 }
 
 .link:link {
-   color: rgb(0, 0, 0); 
+   color: var(--main-text-color); 
 }
 
 .link:visited {
-  color: rgb(0, 0, 0); 
+  color: var(--main-text-color);
 
 }
 
 .link:hover {
-  color: rgb(217,217,214);  
+  color: var(--main-text-color);  
 
 }
 
 .link:active {
-  color: rgb(0, 0, 0); 
+  color: var(--main-text-color); 
 
 }
 
@@ -85,3 +66,12 @@ body {
     font-size: 1rem;
     outline: none;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-bg-color: #121212;
+    --main-text-color: rgb(255, 255, 255);
+  }
+}
+
+
